@@ -5,23 +5,20 @@ import 'dart:io';
 // ignore: depend_on_referenced_packages
 // ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_full_app/app/data/repo/database_repo.dart';
 import 'package:firebase_full_app/app/logic/image_event.dart';
 import 'package:firebase_full_app/app/logic/image_state.dart';
-import 'package:firebase_full_app/app/data/model/model.dart';
 
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:path/path.dart';
 
 class ImageCubit extends Cubit<ImageState1> {
-  ImageCubit() : super(ImageState1());
+  ImageCubit() : super(const ImageState1());
   final firebase_storage.FirebaseStorage storage =
       firebase_storage.FirebaseStorage.instance;
 
   final ImagePicker _picker = ImagePicker();
-  final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
   Future imgFromGallery() async {
     final pickedFile = await _picker.pickImage(source: ImageSource.gallery);

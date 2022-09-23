@@ -1,7 +1,13 @@
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
+// ignore_for_file: avoid_print
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_full_app/app/screens/aut/authentication_screen.dart';
+import 'package:firebase_full_app/app/widgets/custom_dialog.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+// ignore: must_be_immutable
 class SuggestionPage extends StatelessWidget {
    SuggestionPage({Key? key}) : super(key: key);
 var suggestion = '';
@@ -30,7 +36,7 @@ var suggestion = '';
                     height: 287,
                     width: 313,
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: TextField(
                         keyboardType: TextInputType.multiline,
                         maxLines: 15,
@@ -70,7 +76,49 @@ var suggestion = '';
                     ),
                     const SizedBox(width: 108),
                     TextButton(
-                      onPressed: () {                      users.add({'suggestion': suggestion}).then((value) => print('User added')).catchError((eror) => print('Failed to add user: $eror'));
+                      onPressed: () {    showDialog(
+                          context: context,
+                          builder: (ctx) => CustomDialog(
+                            widget: Align(
+                              alignment: Alignment.center,
+                              child: SvgPicture.asset('assets/check-circle.svg')
+                            ),
+                            widget2: Column(
+                              children: [
+                                 const Text(
+                                 '''   Ыраазычылык
+     билдиребиз!''',
+                                  style: TextStyle(
+                                      fontSize: 18, color: Color(0xff515151)),
+                                ),
+                                const SizedBox(height: 20),
+                                 const Text(
+                                 '''   Сиздин оюңуз биз үчүн 
+                маанилүү''',
+                                  style: TextStyle(
+                                      color: Color(0xffB6B6B6), fontSize: 16),
+                                ),
+                               const SizedBox(height: 20),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                             const  AuthenticationScreen()),
+                                    );
+                                  },
+                                  child: const Text(
+                                    'OK',
+                                    style: TextStyle(
+                                        fontSize: 18, color: Color(0xff3473E6)),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ); 
+                                          users.add({'suggestion': suggestion}).then((value) => print('User added')).catchError((eror) => print('Failed to add user: $eror'));
 }             ,         
                         
                 

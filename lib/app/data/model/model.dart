@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
-import 'package:firebase_full_app/app/logic/image_cubit.dart';
-import 'package:image_picker/image_picker.dart';
 
 class User extends Equatable {
  

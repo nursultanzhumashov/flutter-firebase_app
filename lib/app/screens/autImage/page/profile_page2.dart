@@ -41,16 +41,70 @@ class ProfilePage2 extends StatelessWidget {
                         var imagesCount = state.imageUrls.length;
                         return Center(
                           child: Column(children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                            Column(
                               children: [
-                            (imagesCount > 0)
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                (imagesCount > 0)
                           ? CustomWidget(imageUrl: state.imageUrls[0],)
                           : const CustomWidget(),
+                                 (imagesCount > 1)
+                          ? CustomWidget(imageUrl: state.imageUrls[1],)
+                          : const CustomWidget(),
+                                 (imagesCount > 2)
+                          ? CustomWidget(imageUrl: state.imageUrls[2],)
+                          : const CustomWidget(),
+                         
                         
                        
                           ],
                           ),
+                          Row(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                               (imagesCount > 3)
+                          ? CustomWidget(imageUrl: state.imageUrls[3],)
+                          : const CustomWidget(),
+                                 (imagesCount > 4)
+                          ? CustomWidget(imageUrl: state.imageUrls[4],)
+                          : const CustomWidget(),
+                                 (imagesCount > 5)
+                          ? CustomWidget(imageUrl: state.imageUrls[5],)
+                          : const CustomWidget(),
+                            ],
+                          ),
+                           Row(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                               (imagesCount > 6)
+                          ? CustomWidget(imageUrl: state.imageUrls[6],)
+                          : const CustomWidget(),
+                                 (imagesCount > 7)
+                          ? CustomWidget(imageUrl: state.imageUrls[7],)
+                          : const CustomWidget(),
+                                 (imagesCount > 8)
+                          ? CustomWidget(imageUrl: state.imageUrls[8],)
+                          : const CustomWidget(),
+                            ],
+                          ),
+                             Row(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                               (imagesCount > 9)
+                          ? CustomWidget(imageUrl: state.imageUrls[9],)
+                          : const CustomWidget(),
+                                 (imagesCount > 10)
+                          ? CustomWidget(imageUrl: state.imageUrls[10],)
+                          : const CustomWidget(),
+                                 (imagesCount > 11)
+                          ? CustomWidget(imageUrl: state.imageUrls[11],)
+                          : const CustomWidget(),
+                            ],
+                          )
+                          
+                              ],
+                            ),
                           
                           ],
                           ),

@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,22 +24,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MultiBlocProvider(
+    return  MultiProvider(
       providers: [
+        
         BlocProvider(
           create: (_) => ImageBloc(databaseRepository: DatabaseRepository(),
           )..add(LoadImag(),),
         ),
       ],
      
-
- 
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const MainPage(),
+        home:  const MainPage(),
+       
       ),
     );
   }

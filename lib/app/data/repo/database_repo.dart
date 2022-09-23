@@ -16,7 +16,7 @@ class DatabaseRepository extends BaseDatabaseRepository {
 Stream<User> getUser() {
   return _firebaseFirestore
       .collection('users')
-      .doc()
+      .doc('4fm3uIWtI8DGEDg4gk9J')
       .snapshots()
       .map((snap) => User.fromSnapshot(snap));
 }
@@ -27,7 +27,7 @@ Future<void> updateuserPictures(String imageName) async {
 
   return _firebaseFirestore
       .collection('users')
-      .doc()
+      .doc('4fm3uIWtI8DGEDg4gk9J')
       .update({
     'imageUrl': FieldValue.arrayUnion([downloadUrl])
   });

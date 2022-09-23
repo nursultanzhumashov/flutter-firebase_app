@@ -1,5 +1,4 @@
 import 'package:firebase_full_app/app/screens/autImage/page/profile_page.dart';
-import 'package:firebase_full_app/app/screens/autImage/page/profile_page2.dart';
 import 'package:firebase_full_app/app/screens/suggestion/suggestion.dart';
 import 'package:firebase_full_app/app/widgets/authentication_widget.dart';
 import 'package:flutter/material.dart';

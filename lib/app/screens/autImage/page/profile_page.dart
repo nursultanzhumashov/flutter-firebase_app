@@ -120,41 +120,10 @@ class ProfilePage extends StatelessWidget {
                   );
                 },
                 child: Title(color: Colors.black, child: const Text('Image Bloc'))),
-          )
+          ),
+         
         ],
       ),
     );
   }
 }
-
-
-
-// BlocBuilder<ImageCubit, ImageState1>(
-//                     builder: (context, state) {
-//                       if (state.photo == null) {
-//                         return BlocBuilder<ImageBloc, ImageState>(
-//                 builder: (context, state) {
-//                   if (state is ImageLoading) {
-//                     return  const Center(
-//                         child: CircularProgressIndicator(),
-
-//                       );
-//                   }
-//                   if (state is ImageLoaded) {
-//                     var imagesCount = state.imageUrls.length;
-//                     return 
-//                     (imagesCount > 0)
-//                           ? CustomWidget(imageUrl: state.imageUrls[0],)
-//                           : const CustomWidget();
-//                   }
-//                   else {return const Text('nursultanju mwads');}
-                  
-//                 },
-//                 );
-//                       } else {
-//                         return Image.file(
-//                           state.photo!,
-//                           fit: BoxFit.cover,
-//                         );
-//                       }
-//                     }),
